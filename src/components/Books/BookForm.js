@@ -25,7 +25,10 @@ const BookForm = (props) => {
     setBook((prevState) => {
       return { ...prevState, title: (e.target.value = ''), author: (e.target.value = '') };
     });
+
     console.log(book);
+
+    props.onSubmitBook(book);
   };
 
   const onInputTitleChange = (e) => {

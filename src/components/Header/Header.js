@@ -9,13 +9,13 @@ const Header = () => {
         <NavLink to='/' className='link' activeClassName='active' exact>
           Books List
         </NavLink>
-        <NavLink to='/book-add' className='link' activeClassName='active'>
+        <NavLink to='/add' className='link' activeClassName='active'>
           Add Book
         </NavLink>
         <NavLink to='/users' className='link' activeClassName='active'>
           Users List
         </NavLink>
-        <NavLink to='/user-add' className='link' activeClassName='active'>
+        <NavLink to='/users-add' className='link' activeClassName='active'>
           Add User
         </NavLink>
       </div>

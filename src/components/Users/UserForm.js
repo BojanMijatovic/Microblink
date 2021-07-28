@@ -10,20 +10,49 @@ const UserForm = (props) => {
 
   const { name, lastName, birthDay } = user;
 
-  const onSubmitBookForm = (e) => {
+  const onSubmitUserForm = (e) => {
     e.preventDefault();
 
     const user = {
       id: uuidv4(),
       name,
+      lastName,
       date: new Date(birthDay),
     };
 
     setUser((prevState) => {
-      return { ...prevState, name: (e.target.value = ''), lastName: (e.target.value = '') };
+      return { ...prevState, name: (e.target.value = ''), lastName: (e.target.value = ''), date: (e.target.value = '') };
     });
+
     console.log(user);
+
+    props.onSubmitUser(user);
   };
+
+  /*
+    const onSubmitBookForm = (e) => {
+    e.preventDefault();
+
+    if (title.trim().length === 0 || author.trim().length === 0) {
+      return;
+    }
+
+    const book = {
+      id: uuidv4(),
+      title,
+      author,
+    };
+
+    setBook((prevState) => {
+      return { ...prevState, title: (e.target.value = ''), author: (e.target.value = '') };
+    });
+
+    console.log(book);
+
+    props.onSubmitBook(book);
+  };
+
+  */
 
   const onInputNameChange = (e) => {
     setUser((prevState) => {
@@ -44,7 +73,7 @@ const UserForm = (props) => {
   };
 
   return (
-    <form onSubmit={onSubmitBookForm}>
+    <form onSubmit={onSubmitUserForm}>
       <div className=''>
         <label htmlFor='name'>Name</label>
         <input type='text' name='name' value={name} placeholder='Enter name' onChange={onInputNameChange} />

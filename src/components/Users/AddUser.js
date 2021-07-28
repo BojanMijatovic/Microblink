@@ -1,9 +1,10 @@
 import React from 'react';
 import UserForm from './UserForm';
 
-const AddUser = () => {
+const AddUser = ({ history, users, setUsers }) => {
   const onSubmitUser = (user) => {
-    console.log(user);
+    setUsers([user, ...users]);
+    history.push('/users');
   };
 
   return (
