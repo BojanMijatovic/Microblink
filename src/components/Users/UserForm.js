@@ -13,6 +13,10 @@ const UserForm = (props) => {
   const onSubmitUserForm = (e) => {
     e.preventDefault();
 
+    if (name.trim().length === 0 || lastName.trim().length === 0 || birthDay.trim().length === 0) {
+      return;
+    }
+
     const user = {
       id: uuidv4(),
       name,
@@ -28,31 +32,6 @@ const UserForm = (props) => {
 
     props.onSubmitUser(user);
   };
-
-  /*
-    const onSubmitBookForm = (e) => {
-    e.preventDefault();
-
-    if (title.trim().length === 0 || author.trim().length === 0) {
-      return;
-    }
-
-    const book = {
-      id: uuidv4(),
-      title,
-      author,
-    };
-
-    setBook((prevState) => {
-      return { ...prevState, title: (e.target.value = ''), author: (e.target.value = '') };
-    });
-
-    console.log(book);
-
-    props.onSubmitBook(book);
-  };
-
-  */
 
   const onInputNameChange = (e) => {
     setUser((prevState) => {
@@ -92,14 +71,3 @@ const UserForm = (props) => {
 };
 
 export default UserForm;
-
-//    <input type='date' min='2019-01-01' max='2022-12-31' value={enteredDate} onChange={dateChangeHandler} />
-
-/*
-
-    const expenseData = {
-      title: enteredTitle,
-      amount: +enteredAmount,
-      date: new Date(enteredDate),
-    };
-*/

@@ -9,7 +9,6 @@ const Book = ({ id, title, author, onClickRemoveBook }) => {
       <div className='book-details'>
         <div>Author: {author}</div>
       </div>
-
       <button onClick={() => history.push(`/edit/${id}`)}>Edit</button>
       <button onClick={() => onClickRemoveBook(id)}>Delete</button>
     </div>

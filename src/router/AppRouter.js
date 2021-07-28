@@ -6,6 +6,7 @@ import BooksList from '../components/Books/BookList';
 import AddUser from '../components/Users/AddUser';
 import UsersList from '../components/Users/UserList';
 import EditBook from '../components/Books/Book/EditBook';
+import EditUser from '../components/Users/User/EditUser';
 import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
 import UseLocalStorage from '../components/hooks/UseLocalStorage';
 
@@ -24,6 +25,7 @@ const AppRouter = () => {
             <Route render={(props) => <AddUser {...props} users={users} setUsers={setUsers} />} path='/users-add' />
             <Route render={(props) => <UsersList {...props} users={users} setUsers={setUsers} />} path='/users' />
             <Route render={(props) => <EditBook {...props} books={books} setBooks={setBooks} />} path='/edit/:id' />
+            <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='users/edit/:id' />
             <Route component={NotFoundPage} />
           </Switch>
         </div>

@@ -1,7 +1,13 @@
 import React from 'react';
+import User from './User/User';
 
-const UserList = () => {
-  return <h2>List of users</h2>;
+const UserList = ({ users, setUsers }) => {
+  const onClickRemoveUser = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
+  };
+
+  const singleUser = users.map((user) => <User key={user.id} {...user} onClickRemoveUser={onClickRemoveUser} />);
+  return <div className='book-list'>{singleUser}</div>;
 };
 
 export default UserList;
