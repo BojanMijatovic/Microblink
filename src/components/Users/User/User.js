@@ -1,16 +1,15 @@
 import React from 'react';
-
 import { useHistory } from 'react-router-dom';
+import ShowBooks from './ShowBooks/ShowBooks';
+import Date from './Date/Date';
 
-const User = ({ id, name, lastName, date, onClickRemoveUser }) => {
+const User = ({ id, name, lastName, date, onClickRemoveUser, takenBooks }) => {
   const history = useHistory();
-
-  const month = date.toLocaleString('en-US', { month: 'long' });
-  const day = date.toLocaleString('en-US', { day: '2-digit' });
-  const year = date.getFullYear();
 
   const onTakeBook = () => {
     history.push(`/`);
+    console.log(id);
+    console.log(name);
   };
 
   return (
@@ -20,9 +19,12 @@ const User = ({ id, name, lastName, date, onClickRemoveUser }) => {
         <div>LastName: {lastName}</div>
         <div className=''>
           <div>
-            Date: {month} {day} {year}
+            <Date date={date} />
           </div>
         </div>
+      </div>
+      <div className='book-details'>
+        <ShowBooks takenBooks={takenBooks} />
       </div>
       <button onClick={() => onTakeBook(id)}>Take book</button>
       <button onClick={() => history.push(`users-add/edit/${id}`)}>Edit</button>

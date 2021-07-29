@@ -29,6 +29,7 @@ const UserForm = (props) => {
     });
 
     props.onSubmitUser(user);
+    console.log(user.date);
   };
 
   const onInputNameChange = (e) => {
