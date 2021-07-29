@@ -24,3 +24,11 @@ const Header = () => {
 };
 
 export default Header;
+
+/*
+        <Route render={(props) => <AddBook {...props} books={books} setBooks={setBooks} />} path='/add' />
+            <Route render={(props) => <AddUser {...props} users={users} setUsers={setUsers} />} path='/users-add' />
+            <Route render={(props) => <UsersList {...props} users={users} setUsers={setUsers} />} path='/users' />
+            <Route render={(props) => <EditBook {...props} books={books} setBooks={setBooks} />} path='/edit/:id' />
+            <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='users/edit/:id' />
+*/

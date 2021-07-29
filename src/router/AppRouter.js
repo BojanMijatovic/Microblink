@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import AddBook from '../components/Books/AddBook';
@@ -13,6 +14,13 @@ import UseLocalStorage from '../components/hooks/UseLocalStorage';
 const AppRouter = () => {
   const [books, setBooks] = UseLocalStorage('books', []);
   const [users, setUsers] = UseLocalStorage('users', []);
+  const [takenBooks, setTakenBooks] = useState([]);
+
+  const onTakenBook = (book) => {
+    setTakenBooks(() => [...books, { id: book.id, title: book.title, author: book.author }]);
+  };
+
+  console.log(takenBooks);
 
   return (
     <BrowserRouter>
@@ -20,12 +28,16 @@ const AppRouter = () => {
         <Header />
         <div className='main-content'>
           <Switch>
-            <Route render={(props) => <BooksList {...props} books={books} setBooks={setBooks} />} path='/' exact={true} />
+            <Route
+              render={(props) => <BooksList {...props} books={books} setBooks={setBooks} onTakenBook={onTakenBook} />}
+              path='/'
+              exact={true}
+            />
             <Route render={(props) => <AddBook {...props} books={books} setBooks={setBooks} />} path='/add' />
             <Route render={(props) => <AddUser {...props} users={users} setUsers={setUsers} />} path='/users-add' />
             <Route render={(props) => <UsersList {...props} users={users} setUsers={setUsers} />} path='/users' />
             <Route render={(props) => <EditBook {...props} books={books} setBooks={setBooks} />} path='/edit/:id' />
-            <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='users/edit/:id' />
+            <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='/users-edit/:id' />
             <Route component={NotFoundPage} />
           </Switch>
         </div>

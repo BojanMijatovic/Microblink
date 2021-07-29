@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useHistory } from 'react-router-dom';
 
 const User = ({ id, name, lastName, date, onClickRemoveUser }) => {
@@ -7,6 +8,10 @@ const User = ({ id, name, lastName, date, onClickRemoveUser }) => {
   const month = date.toLocaleString('en-US', { month: 'long' });
   const day = date.toLocaleString('en-US', { day: '2-digit' });
   const year = date.getFullYear();
+
+  const onTakeBook = () => {
+    history.push(`/`);
+  };
 
   return (
     <div className=''>
@@ -19,7 +24,7 @@ const User = ({ id, name, lastName, date, onClickRemoveUser }) => {
           </div>
         </div>
       </div>
-
+      <button onClick={() => onTakeBook(id)}>Take book</button>
       <button onClick={() => history.push(`users-add/edit/${id}`)}>Edit</button>
       <button onClick={() => onClickRemoveUser(id)}>Delete</button>
     </div>
