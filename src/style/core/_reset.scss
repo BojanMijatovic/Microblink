@@ -18,4 +18,30 @@ html {
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
     background-color: $background-color;
+    color: $main-color;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $main-color;
+    font-weight: 400;
+    &.is-active {
+        color: #151515;
+    }
 }

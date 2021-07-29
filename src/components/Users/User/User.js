@@ -26,7 +26,7 @@ const User = ({ id, name, lastName, date, onClickRemoveUser, takenBooks }) => {
       <div className='book-details'>
         <ShowBooks takenBooks={takenBooks} />
       </div>
-      <button onClick={() => onTakeBook(id)}>Take book</button>
+      <button onClick={() => onTakeBook(id)}>Take</button>
       <button onClick={() => history.push(`users-add/edit/${id}`)}>Edit</button>
       <button onClick={() => onClickRemoveUser(id)}>Delete</button>
     </div>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import AddBook from '../components/Books/AddBook';
@@ -26,24 +25,22 @@ const AppRouter = () => {
     <BrowserRouter>
       <div>
         <Header />
-        <div className='main-content'>
-          <Switch>
-            <Route
-              render={(props) => <BooksList {...props} books={books} setBooks={setBooks} onTakenBook={onTakenBook} />}
-              path='/'
-              exact={true}
-            />
-            <Route render={(props) => <AddBook {...props} books={books} setBooks={setBooks} />} path='/add' />
-            <Route render={(props) => <AddUser {...props} users={users} setUsers={setUsers} />} path='/users-add' />
-            <Route
-              render={(props) => <UsersList {...props} users={users} setUsers={setUsers} takenBooks={takenBooks} />}
-              path='/users'
-            />
-            <Route render={(props) => <EditBook {...props} books={books} setBooks={setBooks} />} path='/edit/:id' />
-            <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='/users-edit/:id' />
-            <Route component={NotFoundPage} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route
+            render={(props) => <BooksList {...props} books={books} setBooks={setBooks} onTakenBook={onTakenBook} />}
+            path='/'
+            exact={true}
+          />
+          <Route render={(props) => <AddBook {...props} books={books} setBooks={setBooks} />} path='/add' />
+          <Route render={(props) => <AddUser {...props} users={users} setUsers={setUsers} />} path='/users-add' />
+          <Route
+            render={(props) => <UsersList {...props} users={users} setUsers={setUsers} takenBooks={takenBooks} />}
+            path='/users'
+          />
+          <Route render={(props) => <EditBook {...props} books={books} setBooks={setBooks} />} path='/edit/:id' />
+          <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='/users-edit/:id' />
+          <Route component={NotFoundPage} />
+        </Switch>
       </div>
     </BrowserRouter>
   );

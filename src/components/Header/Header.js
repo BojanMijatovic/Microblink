@@ -1,21 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './Header.module.scss';
 
 const Header = () => {
   return (
-    <header>
-      <h1>Library App</h1>
-      <div className='links'>
-        <NavLink to='/' className='link' activeClassName='active' exact>
+    <header className={styles.header}>
+      <h1 className={styles.header_title}>Library App</h1>
+      <div className={styles.header_links}>
+        <NavLink to='/' className={styles.header_link} activeClassName='is-active' exact>
           Books List
         </NavLink>
-        <NavLink to='/add' className='link' activeClassName='active'>
+        <NavLink to='/add' className={styles.header_link} activeClassName='is-active'>
           Add Book
         </NavLink>
-        <NavLink to='/users' className='link' activeClassName='active'>
+        <NavLink to='/users' className={styles.header_link} activeClassName='is-active'>
           Users List
         </NavLink>
-        <NavLink to='/users-add' className='link' activeClassName='active'>
+        <NavLink to='/users-add' className={styles.header_link} activeClassName='is-active'>
           Add User
         </NavLink>
       </div>
@@ -24,11 +25,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-        <Route render={(props) => <AddBook {...props} books={books} setBooks={setBooks} />} path='/add' />
-            <Route render={(props) => <AddUser {...props} users={users} setUsers={setUsers} />} path='/users-add' />
-            <Route render={(props) => <UsersList {...props} users={users} setUsers={setUsers} />} path='/users' />
-            <Route render={(props) => <EditBook {...props} books={books} setBooks={setBooks} />} path='/edit/:id' />
-            <Route render={(props) => <EditUser {...props} users={users} setUsers={setUsers} />} path='users/edit/:id' />
-*/

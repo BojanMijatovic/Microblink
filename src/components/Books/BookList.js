@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Book from './Book/Book';
+import List from '../../style/ui/List/List';
 
 const BooksList = ({ books, setBooks, onTakenBook, newArrTakenBook }) => {
   const [takenBook, setTakenBook] = useState([]);
@@ -18,7 +19,7 @@ const BooksList = ({ books, setBooks, onTakenBook, newArrTakenBook }) => {
   const singleBook = books.map((book) => (
     <Book key={book.id} {...book} onClickRemoveBook={onClickRemoveBook} onPickBook={onPickBook} onTakenBook={onTakenBook} />
   ));
-  return <div className='book-list'>{singleBook}</div>;
+  return <List>{singleBook}</List>;
 };
 
 export default BooksList;
