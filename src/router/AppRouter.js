@@ -19,8 +19,6 @@ const AppRouter = () => {
     setTakenBooks(() => [...books, { id: book.id, title: book.title, author: book.author }]);
   };
 
-  console.log(takenBooks);
-
   return (
     <BrowserRouter>
       <div>

@@ -4,6 +4,11 @@ import styles from './Date.module.scss';
 const Date = ({ date }) => {
   const month = date.toLocaleString('en-US', { month: 'long' });
   const day = date.toLocaleString('en-US', { day: '2-digit' });
+
+  /*
+  ovde ima bug iz nekog razloga ne moze lepo da prikazuje datum kada se refresuje stranica
+  nisam uspeo da ga resim
+  */
   const year = date.toLocaleString('en-US', { year: 'numeric' });
   return (
     <div className={styles.date}>

@@ -10,10 +10,15 @@ import List from '../../../style/ui/List/List';
 const User = ({ id, name, lastName, date, onClickRemoveUser, takenBooks }) => {
   const history = useHistory();
 
+  /*
+  
+  BUG - 
+  ako ima više usera, kada se kikne na button TAKE on povuče knjigu na sve usere, i sve usere :)
+  zbog ovog problema koji nisam rešio, kasnije sam i predao zadatak.
+
+  */
   const onTakeBook = () => {
     history.push(`/`);
-    console.log(id);
-    console.log(name);
   };
 
   return (
@@ -23,9 +28,7 @@ const User = ({ id, name, lastName, date, onClickRemoveUser, takenBooks }) => {
         <h4 className={styles.user_lastName}>LastName: {lastName}</h4>
         <Date date={date} />
       </div>
-
       <ShowBooks takenBooks={takenBooks} />
-
       <ButtonGroup>
         <Buttons onClick={() => onTakeBook(id)}>Take</Buttons>
         <Buttons onClick={() => history.push(`users-add/edit/${id}`)}>Edit</Buttons>

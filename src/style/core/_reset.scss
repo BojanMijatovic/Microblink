@@ -15,10 +15,9 @@
 html {
     font-size: 62.5%;
     line-height: 1.5;
-    overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
-    background-color: $background-color;
     color: $main-color;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(97, 186, 255, 1) 0%, rgba(166, 239, 253, 1) 90.1%);
 }
 
 body {
@@ -42,6 +41,6 @@ a {
     color: $main-color;
     font-weight: 400;
     &.is-active {
-        color: #151515;
+        color: $active-color;
     }
 }

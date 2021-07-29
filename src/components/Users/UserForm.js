@@ -70,35 +70,3 @@ const UserForm = (props) => {
 };
 
 export default UserForm;
-
-/*
-
-    if (title.trim().length === 0 || author.trim().length === 0) {
-      return;
-    }
-
-    const book = {
-      id: uuidv4(),
-      title,
-      author,
-    };
-
-    setBook((prevState) => {
-      return { ...prevState, title: (e.target.value = ''), author: (e.target.value = '') };
-    });
-
-    props.onSubmitBook(book);
-  };
-
-  const onInputTitleChange = (e) => {
-    setBook((prevState) => {
-      return { ...prevState, title: e.target.value };
-    });
-  };
-
-  const onInputAuthorChange = (e) => {
-    setBook((prevState) => {
-      return { ...prevState, author: e.target.value };
-    });
-  };
-*/

@@ -1,5 +1,6 @@
 import React from 'react';
 import UserForm from './UserForm';
+import Form from '../../style/ui/Form/Form';
 
 const AddUser = ({ history, users, setUsers }) => {
   const onSubmitUser = (user) => {
@@ -8,9 +9,9 @@ const AddUser = ({ history, users, setUsers }) => {
   };
 
   return (
-    <React.Fragment>
+    <Form>
       <UserForm onSubmitUser={onSubmitUser} />
-    </React.Fragment>
+    </Form>
   );
 };
 

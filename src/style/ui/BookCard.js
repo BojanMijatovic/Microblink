@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './BookCard.scss';
 
 const BookCard = (props) => {
