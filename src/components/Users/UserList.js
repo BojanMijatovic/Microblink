@@ -1,5 +1,6 @@
 import React from 'react';
 import User from './User/User';
+import List from '../../style/ui/List/List';
 
 const UserList = ({ users, setUsers, onTakenBook, takenBooks }) => {
   const onClickRemoveUser = (id) => {
@@ -9,7 +10,7 @@ const UserList = ({ users, setUsers, onTakenBook, takenBooks }) => {
   const singleUser = users.map((user) => (
     <User key={user.id} {...user} onTakenBook={onTakenBook} takenBooks={takenBooks} onClickRemoveUser={onClickRemoveUser} />
   ));
-  return <div className='book-list'>{singleUser}</div>;
+  return <List>{singleUser}</List>;
 };
 
 export default UserList;

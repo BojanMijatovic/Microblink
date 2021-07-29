@@ -2,6 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import ShowBooks from './ShowBooks/ShowBooks';
 import Date from './Date/Date';
+import styles from './User.module.scss';
+import ButtonGroup from '../../../style/ui/ButtonGroup/ButtonGroup';
+import Buttons from '../../../style/ui/Buttons/Buttons';
+import List from '../../../style/ui/List/List';
 
 const User = ({ id, name, lastName, date, onClickRemoveUser, takenBooks }) => {
   const history = useHistory();
@@ -13,23 +17,21 @@ const User = ({ id, name, lastName, date, onClickRemoveUser, takenBooks }) => {
   };
 
   return (
-    <div className=''>
-      <h2 className=''>Name: {name}</h2>
-      <div className='book-details'>
-        <div>LastName: {lastName}</div>
-        <div className=''>
-          <div>
-            <Date date={date} />
-          </div>
-        </div>
+    <List>
+      <div className={styles.user}>
+        <h3 className={styles.user_name}>Name: {name}</h3>
+        <h4 className={styles.user_lastName}>LastName: {lastName}</h4>
+        <Date date={date} />
       </div>
-      <div className='book-details'>
-        <ShowBooks takenBooks={takenBooks} />
-      </div>
-      <button onClick={() => onTakeBook(id)}>Take</button>
-      <button onClick={() => history.push(`users-add/edit/${id}`)}>Edit</button>
-      <button onClick={() => onClickRemoveUser(id)}>Delete</button>
-    </div>
+
+      <ShowBooks takenBooks={takenBooks} />
+
+      <ButtonGroup>
+        <Buttons onClick={() => onTakeBook(id)}>Take</Buttons>
+        <Buttons onClick={() => history.push(`users-add/edit/${id}`)}>Edit</Buttons>
+        <Buttons onClick={() => onClickRemoveUser(id)}>Delete</Buttons>
+      </ButtonGroup>
+    </List>
   );
 };
 

@@ -7,21 +7,4 @@
     &_author {
         margin-top: 0.5rem;
     }
-    .book_btn {
-        margin-right: 1rem;
-        padding: 0.5rem 3rem;
-        border-radius: 0.5rem;
-        background-color: #fff;
-        border: 1px solid #e0e0e0;
-        color: $btn-color;
-        font-weight: 700;
-        font-size: 1.5rem;
-        text-transform: capitalize;
-        &:last-child {
-            color: $btn-delete-color;
-        }
-        &:nth-child(2) {
-            color: $btn-save-color;
-        }
-    }
 }

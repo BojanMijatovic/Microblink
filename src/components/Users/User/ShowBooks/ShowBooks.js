@@ -1,8 +1,10 @@
 import React from 'react';
 
+import SingleBook from './SingleBook';
+
 const ShowBooks = ({ takenBooks }) => {
-  const books = takenBooks.map((book, id = book.id) => <p key={id}>{book.title}</p>);
-  return <div className=''>{books}</div>;
+  const showSingleBook = takenBooks.map((book, id = book.id) => <SingleBook key={id} {...book} />);
+  return <div className=''>{showSingleBook}</div>;
 };
 
 export default ShowBooks;

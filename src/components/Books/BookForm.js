@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Form from '../../style/ui/Form/Form';
 
 const BookForm = (props) => {
   const [book, setBook] = useState({
@@ -41,7 +42,7 @@ const BookForm = (props) => {
   };
 
   return (
-    <div className=''>
+    <Form>
       <form onSubmit={onSubmitBookForm}>
         <div className=''>
           <label htmlFor='book'>Book</label>
@@ -53,7 +54,7 @@ const BookForm = (props) => {
         </div>
         <button type='submit'>submit</button>
       </form>
-    </div>
+    </Form>
   );
 };
 
